@@ -4,7 +4,7 @@ I also add simple custom validation of fields (fields can't be empty, must have 
 Everything was built from scratch (besides API). You can see, that i spent lots of time building my own custom sorting and filtration. This App has responsive structure.
 
 VIDEO DEMO HOW IT WORKS YOU CAN FIND BELLOW
-https://drive.google.com/file/d/1b8YXn75W8qH3cCubEZdjxsFk8Jveq5UU/view?usp=sharing
+https://drive.google.com/file/d/1hJsJ9ySDczkSeZeziSIpNWfdhdko0N18/view?usp=sharing
 
 HOW TO RUN LOCAL SERVER API FOR THIS APP you can find here:
 https://docs.google.com/document/d/1FbRpXNcteJnAqc7Wys3aISJei4Mq2JMku1BPnl-n64A/edit
