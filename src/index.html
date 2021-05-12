@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/src/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="/src/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/src/css/queries.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,400;1,300;1,400&display=swap"
+        rel="stylesheet" />
+    <title>App for searching products in stores</title>
+</head>
+
+<body>
+    <main class="main-box">
+        <aside class="sidebar-box">
+            <header class="sidebar-header">
+                <h2>Stores list</h2>
+                <div>
+                    <div class="input-wrapper">
+                        <form id="test">
+                            <input class="input-store" type="text" placeholder="Search" />
+                            <div class="search-buttons-wrapper">
+                                <button type="submit" class="search-button" id="search">
+                                    <svg class="svg-size-tiny">
+                                        <use xlink:href="/src/img/svg/sprite.svg#icon-search"></use>
+                                    </svg>
+                                </button>
+                                <button class="search-button">
+                                    <svg class="svg-size-tiny">
+                                        <use xlink:href="/src/img/svg/sprite.svg#icon-spinner9"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="svg-box">
+                        <div class="svg-style positioned-svg svg-hover">
+                            <svg class="svg-size-tiny">
+                                <use xlink:href="/src/img/svg/sprite.svg#icon-circle-down"></use>
+                            </svg>
+                        </div>
+                        <div class="svg-style positioned-svg svg-hover">
+                            <svg class="svg-size-tiny">
+                                <use xlink:href="/src/img/svg/sprite.svg#icon-pushpin"></use>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <nav class="nav-box">
+                <div class="preloader preloader-width"></div>
+                <ul></ul>
+            </nav>
+        </aside>
+        <section class="store-details-block overflow">
+            <header class="description-container">
+                <h2>Store Details</h2>
+
+                <div class="description-store">
+                    <p><span>Email: </span><span class="description-email-js">${e.Email}</span></p>
+                    <p><span>Phone Number: </span><span class="description-phone-js">${e.PhoneNumber}</span></p>
+                    <p><span>Adress: </span><span class="description-adress-js">${e.Address}</span></p>
+                </div>
+                <div class="description-store">
+                    <p><span>Established Data:</span><span class="description-established-js">${e.Established}</span>
+                    </p>
+                    <p><span>Floor Area:</span><span class="description-floorArea-js">${e.FloorArea}</span></p>
+
+                </div>
+                <div class="svg-box">
+                    <div class="svg-style positioned-svg svg-hover"><svg class="svg-size-tiny">
+                            <use xlink:href="/src/img/svg/sprite.svg#icon-circle-down"></use>
+                        </svg></div>
+                    <div class="svg-style positioned-svg svg-hover"> <svg class="svg-size-tiny">
+                            <use xlink:href="/src/img/svg/sprite.svg#icon-pushpin"></use>
+                        </svg></div>
+                </div>`
+            </header>
+            <section class="info">
+                <div class="info-store  all-js"><span class="products-length-js"></span><span>All</span></div>
+                <div class="info-store  ok-js">
+                    <div class="circle status-storage">
+                        <svg class="svg-size-big positioned-svg-info">
+                            <use xlink:href="/src/img/svg/sprite.svg#icon-checkbox-checked"></use>
+                        </svg>
+                        <div class="position-status ">Ok</div>
+                        <div class="position-right status-ok-js"> ${
+                            showStatusInfo(idProducts).ok
+                            }</div>
+                    </div>
+                </div>
+                <div class="info-store  storage-js">
+                    <div class="circle status-stock">
+                        <svg class="svg-size-big positioned-svg-info">
+                            <use xlink:href="/src/img/svg/sprite.svg#icon-warning"></use>
+                        </svg>
+                        <div class="position-status">Storage</div>
+                        <div class="position-right status-storage-js">${
+                            showStatusInfo(idProducts).storage
+                            }</div>
+                    </div>
+                </div>
+                <div class="info-store  stock-js">
+                    <div class="circle status-ok">
+                        <svg class="svg-size-big positioned-svg-info">
+                            <use xlink:href="/src/img/svg/sprite.svg#icon-notification"></use>
+                        </svg>
+                        <div class="position-status position-last-item">Out of Stock</div>
+                        <div class="position-right status-outOfStock-js"></div>
+                    </div>
+                </div>
+            </section>
+            <section class="table-wrapper">
+                <table class="table-products-box">
+                    <caption class="caption">
+                        <div class="caption-box">
+                            <p>Products</p>
+                            <form id="form-product">
+                                <input class="input-products" type="text" placeholder="Search" />
+                                <div class="search-buttons-wrapper search-product-positioned">
+                                    <div class="cross-button class=" search-button "></div>
+                                            <button
+                                                type=" submit" class="search-button" id="search">
+                                        <svg class="svg-size-tiny">
+                                            <use xlink:href="/src/img/svg/sprite.svg#icon-search"></use>
+                                        </svg>
+                                        </button>
+
+                                    </div>
+                            </form>
+
+                        </div>
+                    </caption>
+                    <thead class="thead">
+                        <th>Name <div class="sort"><button class="btn-sort sort-up name-up-js">
+                                    <svg class="svg-size-point">
+                                        <use xlink:href="/src/img/svg/sprite.svg#icon-arrow-down"></use>
+                                    </svg></button>
+                                <button class="btn-sort sort-down name-down-js">
+                                    <svg class="svg-size-point">
+                                        <use xlink:href="/src/img/svg/sprite.svg#icon-arrow-up"></use>
+                                    </svg></button></div>
+                        </th>
+                        <th>Price
+                            <div class="sort"><button class="btn-sort sort-up price-up-js">
+                                    <svg class="svg-size-point">
+                                        <use xlink:href="/src/img/svg/sprite.svg#icon-arrow-down"></use>
+                                    </svg></button>
+                                <button class="btn-sort sort-down price-down-js">
+                                    <svg class="svg-size-point">
+                                        <use xlink:href="/src/img/svg/sprite.svg#icon-arrow-up"></use>
+                                    </svg></button></div>
+                        </th>
+                        <th>Specs<div class="sort"><button class="btn-sort sort-up specs-up-js">
+                                    <svg class="svg-size-point">
+                                        <use xlink:href="/src/img/svg/sprite.svg#icon-arrow-down"></use>
+                                    </svg></button>
+                                <button class="btn-sort sort-down specs-down-js">
+                                    <svg class="svg-size-point">
+                                        <use xlink:href="/src/img/svg/sprite.svg#icon-arrow-up"></use>
+                                    </svg></button></div>
+                        </th>
+                        <th>SuplierInfo<div class="sort"><button class="btn-sort sort-up suplierinfo-up-js">
+                                    <svg class="svg-size-point">
+                                        <use xlink:href="/src/img/svg/sprite.svg#icon-arrow-down"></use>
+                                    </svg></button>
+                                <button class="btn-sort sort-down suplierinfo-down-js">
+                                    <svg class="svg-size-point">
+                                        <use xlink:href="/src/img/svg/sprite.svg#icon-arrow-up"></use>
+                                    </svg></button></div>
+                        </th>
+                        <th>Country of origin<div class="sort"><button class="btn-sort sort-up country-up-js">
+                                    <svg class="svg-size-point">
+                                        <use xlink:href="/src/img/svg/sprite.svg#icon-arrow-down"></use>
+                                    </svg></button>
+                                <button class="btn-sort sort-down country-down-js">
+                                    <svg class="svg-size-point">
+                                        <use xlink:href="/src/img/svg/sprite.svg#icon-arrow-up"></use>
+                                    </svg></button></div>
+                        </th>
+                        <th>ProdCompany<div class="sort"><button class="btn-sort sort-up prodcompany-up-js">
+                                    <svg class="svg-size-point">
+                                        <use xlink:href="/src/img/svg/sprite.svg#icon-arrow-down"></use>
+                                    </svg></button>
+                                <button class="btn-sort sort-down prodcompany-down-js">
+                                    <svg class="svg-size-point">
+                                        <use xlink:href="/src/img/svg/sprite.svg#icon-arrow-up"></use>
+                                    </svg></button></div>
+                        </th>
+                        <th>Rating<div class="sort"><button class="btn-sort sort-up rating-up-js">
+                                    <svg class="svg-size-point">
+                                        <use xlink:href="/src/img/svg/sprite.svg#icon-arrow-down"></use>
+                                    </svg></button>
+                                <button class="btn-sort sort-down rating-down-js">
+                                    <svg class="svg-size-point">
+                                        <use xlink:href="/src/img/svg/sprite.svg#icon-arrow-up"></use>
+                                    </svg></button></div>
+                        </th>
+                    </thead>
+                    <tbody class="tbody"></tbody>
+                </table>
+
+            </section>
+            <div class="no-result-box ">
+                <div class="no-result">Store is not selected</div>
+                <div class="image-result-wrapper">
+                    <div class="image-result">
+                        <svg class="svg-size-no-result">
+                            <use xlink:href="/src/img/svg/sprite.svg#icon-home3"></use>
+                        </svg>
+                        <p>The store is not selected</p>
+                        <p>Please select the store to proceed</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-preloader"></div>
+        </section>
+        <footer class="footer-wrapper">
+            <div class="footer-left">
+                <button href="#" class="btn btn-view-create btn-margin-right create-store-js">
+                    <svg class="svg-size-tiny svg-footer">
+                        <use xlink:href="/src/img/svg/sprite.svg#icon-plus"></use>
+                    </svg>
+                    <span>Create</span>
+                </button>
+            </div>
+            <div class="footer-right hidden">
+                <button href="#" class="btn btn-view-create btn-right new-products-js">
+                    <svg class="svg-size-tiny svg-footer">
+                        <use xlink:href="/src/img/svg/sprite.svg#icon-plus"></use>
+                    </svg>
+                    <span>Create</span>
+                </button>
+                <button href="#" class="btn btn-view-delete btn-margin-right delete-store-js" type="button">
+                    <svg class="svg-size-tiny svg-footer">
+                        <use xlink:href="/src/img/svg/sprite.svg#icon-bin"></use>
+                    </svg><span>Delete</span>
+                </button>
+            </div>
+        </footer>
+        <div class="popup display-none">
+            <div class="popup-create">
+                <h3>Create new store</h3>
+                <form class="form-box-create" name="newStore">
+                    <div class="create-field"><span><span>*</span>Name</span><input id="Name"
+                            class="input-create-store name" type="text" placeholder="Search" />
+                    </div>
+                    <div class="create-field"><span><span>*</span>Email</span><input id="Email"
+                            class="input-create-store email" type="text" placeholder="Search" />
+                    </div>
+                    <div class="create-field"><span><span>*</span>Phone-number</span><input id="PhoneNumber"
+                            class="input-create-store phonenumber" type="tel" placeholder="Search" />
+                    </div>
+                    <div class="create-field"><span><span>*</span>Adress</span><input class="input-create-store address"
+                            id="Address" type="text" placeholder="Search" />
+                    </div>
+                    <div class="create-field"><span><span>*</span>Established</span><input type="date"
+                            class="input-create-store" id="Established" name="trip-start" value="2018-07-22"
+                            min="2018-01-01" max="2018-12-31">
+                    </div>
+                    <div class="create-field"><span><span>*</span>FloorArea</span><input
+                            class="input-create-store floorarea" type="text" id="FloorArea" placeholder="Search" />
+                    </div>
+                    <div class="form-store-buttons form-store-buttons-js">
+                        <div class="store-buttons"> <button class="new-store-js" type="submit">
+                                <span>Create</span>
+                            </button>
+                            <button class="cancel-form-js" type="button ">
+                                <span>Cancel</span>
+                            </button></div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+        <div class="popup-products display-none">
+            <div class="popup-create">
+                <h3>Create new products</h3>
+                <form class="form-box-create" name="newProducts">
+                    <div class="create-field"><span><span>*</span>Name</span><input id="Name"
+                            class="input-create-products name" type="text" placeholder="Search" />
+                    </div>
+                    <div class="create-field"><span><span>*</span>Price</span><input id="Price"
+                            class="input-create-products price" type="text" placeholder="Search" />
+                    </div>
+                    <div class="create-field"><span><span>*</span>Specs</span><input id="Specs"
+                            class="input-create-products specs" type="tel" placeholder="Search" />
+                    </div>
+                    <div class="create-field"><span><span>*</span>Rating</span><input class="input-create-products rating"
+                            id="Rating" type="text" placeholder="Search" />
+                    </div>
+                    <div class="create-field"><span><span>*</span>Suplier Info</span><input type="text"
+                            class="input-create-products supplierinfo" id="SupplierInfo" >
+                    </div>
+                    <div class="create-field"><span><span>*</span>MadeIn</span><input
+                            class="input-create-products madein" type="text" id="MadeIn" placeholder="Search" />
+                    </div>
+
+                    <div class="create-field"><span><span>*</span>Production company name</span><input
+                        class="input-create-products productioncompanyname" type="text" id="ProductionCompanyName" placeholder="Search" />
+                </div>
+                <div class="create-field"><span><span>*</span>Status</span><select>
+                    <option value="OK">OK</option>
+                    <option  value="STORAGE">Storage</option>
+                    <option value ="OUT_OF_STOCK">Out of stock</option>
+                  </select>
+            </div>
+                    <div class="store-buttons form-products-buttons-js">
+                        <div class="form-products-buttons-js"> <button class="new-products-js" type="submit">
+                                <span>Create</span>
+                            </button>
+                            <button class="close-products-js" type="button ">
+                                <span>Cancel</span>
+                            </button></div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+        <div class="popup-edit display-none">
+            <div class="popup-create">
+                <h3>Editing products</h3>
+                <form class="form-box-create" name="Editing">
+                    <div class="create-field"><span><span>*</span>Name</span><input id="Name"
+                            class="input-edit input-edit-name name" type="text" placeholder="Search" />
+                    </div>
+                    <div class="create-field"><span><span>*</span>Price</span><input id="Price"
+                            class="input-edit input-edit-price price" type="text" placeholder="Search" />
+                    </div>
+                    <div class="create-field"><span><span>*</span>Specs</span><input id="Specs"
+                            class="input-edit input-edit-specs specs" type="tel" placeholder="Search" />
+                    </div>
+                    <div class="create-field"><span><span>*</span>Rating</span><input class="input-edit input-edit-rating rating"
+                            id="Rating" type="text" placeholder="Search" />
+                    </div>
+                    <div class="create-field"><span><span>*</span>Suplier Info</span><input type="text"
+                            class="input-edit input-edit-supplierinfo supplierinfo" id="SupplierInfo" >
+                    </div>
+                    <div class="create-field"><span><span>*</span>MadeIn</span><input
+                            class="input-edit input-edit-madein madein" type="text" id="MadeIn" placeholder="Search" />
+                    </div>
+
+                    <div class="create-field"><span><span>*</span>Production company name</span><input
+                        class="input-edit input-edit-productcompany productioncompanyname" type="text" id="ProductionCompanyName" placeholder="Search" />
+                </div>
+                <div class="create-field"><span><span>*</span>Status</span><select class ="edit-select">
+                    <option value="OK">OK</option>
+                    <option  value="STORAGE">Storage</option>
+                    <option value ="OUT_OF_STOCK">Out of stock</option>
+                  </select>
+            </div>
+                    <div class="store-buttons form-edit-buttons-js">
+                        <div class="edited-button"> <button class="send-edited-button-js" type="submit">
+                                <span>Send</span>
+                            </button>
+                            <button class="close-edit-js" type="button ">
+                                <span>Cancel</span>
+                            </button></div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </main>
+</body>
+<script type="module" src="/src/data.js"></script>
+
+</html>
